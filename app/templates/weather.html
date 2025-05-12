@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Data</title>
+</head>
+<body style="background-color: {{ bg_color }}">
+    {% if daily_weather %}
+        <h2>Daily Weather Data in {{ daily_weather.city }}, {{ daily_weather.country }}</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Day of Week</th>
+                    <th>Night Temperature (°C)</th>
+                    <th>Day Temperature (°C)</th>
+                    <th>Average Humidity (%)</th>
+                    <th>Weather Summary</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in daily_weather.days %}
+                    <tr>
+                        <td>{{ entry.date }}</td>
+                        <td>{{ entry.day_of_week }}</td>
+                        <td>{{ entry.night_temp }}</td>
+                        <td>{{ entry.day_temp }}</td>
+                        <td>{{ entry.humidity }}</td>
+                        <td>{{ entry.summary }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+<a href="{{ url_for('show_history') }}">View History</a>
+    {% elif error %}
+        <p style="color: red;">{{ error }}</p>
+    {% else %}
+        <p>No weather data available.</p>
+    {% endif %}
+</body>
+</html>
+

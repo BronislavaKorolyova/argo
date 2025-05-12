@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search History</title>
+</head>
+<body style="background-color: {{ bg_color }}">
+    <h1>Weather Search History</h1>
+    {% if files %}
+        <ul>
+        {% for file in files %}
+            <li><a href="{{ url_for('download_history_file', filename=file) }}">{{ file }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No history files found.</p>
+    {% endif %}
+</body>
+</html>
+

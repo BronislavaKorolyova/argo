@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Form</title>
+</head>
+<body style="background-color: {{ bg_color }}">
+    <h1>Instance: {{ instance_id }}</h1>
+    <form method="POST" action="/">
+        <input type="text" name="city" placeholder="Enter city" required>
+        <input type="text" name="country" placeholder="Enter country (optional)">
+        <input type="submit" value="Get Weather">
+    </form>
+    {% if result %}
+        <h2>Geo Data:</h2>
+        <pre>{{ result }}</pre>
+    {% endif %}
+</body>
+</html>
+
