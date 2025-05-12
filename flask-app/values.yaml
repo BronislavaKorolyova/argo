@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: bronyakorolyova/argo 
+  repository: bronyakorolyova/weather-app 
   pullPolicy: IfNotPresent
   tag: "latest"
 
