@@ -16,4 +16,4 @@ spec:
         - name: webapp 
           image: bronyakorolyova/weather-app:latest 
           ports:
-              containerPort: 5000 
+          - containerPort: 5000 
