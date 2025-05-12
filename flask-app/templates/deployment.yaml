@@ -1,19 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapp-deployment 
+  name: webapp-deployment
+  labels:
+    app: webapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: webapp 
+      app: webapp
   template:
     metadata:
       labels:
-        app: webapp 
+        app: webapp
     spec:
       containers:
-        - name: webapp 
-          image: bronyakorolyova/weather-app:latest 
+        - name: webapp
+          image: bronyakorolyova/weather-app:latest
+          imagePullPolicy: IfNotPresent
           ports:
-          - containerPort: 5000 
+            - name: http
+              containerPort: 5000
+
