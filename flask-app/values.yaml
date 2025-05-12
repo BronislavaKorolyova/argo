@@ -1,9 +1,6 @@
 replicaCount: 1
 
-image:
-  repository: bronyakorolyova/weather-app 
-  pullPolicy: IfNotPresent
-  tag: "latest"
+image: bronyakorolyova/weather-app:latest
 
 
 service:
