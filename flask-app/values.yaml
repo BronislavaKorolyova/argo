@@ -2,7 +2,6 @@ replicaCount: 1
 
 image: bronyakorolyova/weather-app:latest
 
-
 service:
   type: ClusterIP
   port: 5000 

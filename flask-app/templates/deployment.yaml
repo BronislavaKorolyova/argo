@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "flask-app.fullname" . }}
+  name: webapp-deployment 
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: 1
   selector:
     matchLabels:
-      app: {{ include "flask-app.name" . }} 
+      app: webapp 
   template:
     metadata:
       labels:
-        app: {{ include "flask-app.name" . }} 
+        app: webapp 
     spec:
       containers:
-        - name: {{ .Chart.Name }}
-          image: "{{ .Values.image }}" 
+        - name: webapp 
+          image: bronyakorolyova/weather-app:latest 
           ports:
               containerPort: 5000 
