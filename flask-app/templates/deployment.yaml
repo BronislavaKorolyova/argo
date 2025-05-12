@@ -15,6 +15,5 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image }}" 
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
               containerPort: 5000 
